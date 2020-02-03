@@ -15,7 +15,7 @@ public class TemperaturaMarteClient {
 			
 			
 			
-			String url = "http://localhost:8080/preoday/nasa/temperature/415";
+			String url = "http://localhost:8080/preoday/nasa/temperature/416";
 			
 			//String url = "http://localhost:8080/preoday/nasa/temperature";
 			
