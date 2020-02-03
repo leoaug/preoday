@@ -1,30 +1,30 @@
 package gov.nasa.api.bean;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class JSO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	@JsonProperty("AT")
 	private AT at;
-	private HWS hws;
-	private PRE pre;
 	
-	@JsonProperty("WD")
-	private List <WD> listaWd;
+	@JsonProperty("HWS")
+	private HWS hws;
+	
+	@JsonProperty("PRE")
+	private PRE pre;
+
 	
 	@JsonProperty("Season")
 	private String season;
 	
 	@JsonProperty("First_UTC")
-	private Date firstUTC;
+	private String firstUTC;
 	
 	@JsonProperty("Last_UTC")
-	private Date lastUTC;
+	private String lastUTC;
 
 	public AT getAt() {
 		return at;
@@ -50,14 +50,6 @@ public class JSO implements Serializable {
 		this.pre = pre;
 	}
 
-	public List<WD> getListaWd() {
-		return listaWd;
-	}
-
-	public void setListaWd(List<WD> listaWd) {
-		this.listaWd = listaWd;
-	}
-
 	public String getSeason() {
 		return season;
 	}
@@ -66,19 +58,19 @@ public class JSO implements Serializable {
 		this.season = season;
 	}
 
-	public Date getFirstUTC() {
+	public String getFirstUTC() {
 		return firstUTC;
 	}
 
-	public void setFirstUTC(Date firstUTC) {
+	public void setFirstUTC(String firstUTC) {
 		this.firstUTC = firstUTC;
 	}
 
-	public Date getLastUTC() {
+	public String getLastUTC() {
 		return lastUTC;
 	}
 
-	public void setLastUTC(Date lastUTC) {
+	public void setLastUTC(String lastUTC) {
 		this.lastUTC = lastUTC;
 	}
 	

@@ -1,11 +1,8 @@
 package gov.br.nasa.api.client;
 
-import java.util.HashMap;
-import java.util.Map;
+
 
 import org.junit.Test;
-
-import gov.nasa.api.constantes.EndPoint;
 import gov.nasa.api.servico.cliente.ServicoClienteRest;
 
 public class TemperaturaMarteClient {
@@ -17,10 +14,10 @@ public class TemperaturaMarteClient {
 		try {
 			
 			
-			//Map <String, String> params = new HashMap <String, String>();
-			//params.put(key, value)
 			
 			String url = "http://localhost:8080/preoday/nasa/temperature/415";
+			
+			//String url = "http://localhost:8080/preoday/nasa/temperature";
 			
 			String resultado = ServicoClienteRest.GET(url, 
 								   true,

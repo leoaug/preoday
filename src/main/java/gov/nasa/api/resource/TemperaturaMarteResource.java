@@ -35,13 +35,18 @@ public class TemperaturaMarteResource {
 					   null,
 					   5000));
 			
-			
+			/**
+			 *
+			 *PEgando os keys dos Sol's
+			 */
 			JSONArray JSONArraySolKeys = new JSONArray(jsonObject.get("sol_keys").toString()) ;
 			double totalTemperatures = 0;
 			for (int i = 0; i < JSONArraySolKeys.length(); i++) {
+				
 				JSO JSO = new JsonUtil<JSO>() .
-					converterStringParaObjeto(jsonObject.get(JSONArraySolKeys.getJSONObject(i).toString()).toString(), JSO.class) ;
+						converterStringParaObjeto(jsonObject.get(JSONArraySolKeys.getString(i)).toString(), JSO.class) ;
 				totalTemperatures += JSO.getAt().getAv();
+								
 			}
 			
 			Temperature temperature = new Temperature();
