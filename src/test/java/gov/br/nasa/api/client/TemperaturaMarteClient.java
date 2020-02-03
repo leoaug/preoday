@@ -10,13 +10,16 @@ public class TemperaturaMarteClient {
 	
 	@Test
 	public void test() {
-		System.out.println("yeahh");
 		try {
 			
-			
-			
+			/**
+			 ** Enpoint para quadno quiser o SOL
+			 * */
 			String url = "http://localhost:8080/preoday/nasa/temperature/416";
 			
+			/**
+			 ** Enpoint para quando quiser ql SOL
+			 * */
 			//String url = "http://localhost:8080/preoday/nasa/temperature";
 			
 			String resultado = ServicoClienteRest.GET(url, 

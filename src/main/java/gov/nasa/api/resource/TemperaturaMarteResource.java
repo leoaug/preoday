@@ -16,6 +16,7 @@ import gov.nasa.api.bean.Temperature;
 import gov.nasa.api.constantes.EndPoint;
 import gov.nasa.api.servico.cliente.ServicoClienteRest;
 import gov.nasa.api.util.JsonUtil;
+import gov.nasa.api.util.TemperatureUtil;
 
 
 @RestController
@@ -50,7 +51,7 @@ public class TemperaturaMarteResource {
 			}
 			
 			Temperature temperature = new Temperature();
-			temperature.setAverageTemperature(totalTemperatures / JSONArraySolKeys.length());
+			temperature.setAverageTemperature(TemperatureUtil.celciusParaFarenheit(totalTemperatures) / JSONArraySolKeys.length());
 			
 			
 			return new ResponseEntity <Temperature> (temperature,HttpStatus.OK);
@@ -80,7 +81,7 @@ public class TemperaturaMarteResource {
 				
 				
 				Temperature temperature = new Temperature();
-				temperature.setAverageTemperature(jso.getAt().getAv());
+				temperature.setAverageTemperature(TemperatureUtil.celciusParaFarenheit(jso.getAt().getAv()));
 				
 				return new ResponseEntity <Temperature>  (temperature,HttpStatus.OK);
 			}
