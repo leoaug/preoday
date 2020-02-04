@@ -17,6 +17,9 @@ public class JSO implements Serializable {
 	private PRE pre;
 
 	
+	@JsonProperty("WD")
+	private WD wd;
+	
 	@JsonProperty("Season")
 	private String season;
 	

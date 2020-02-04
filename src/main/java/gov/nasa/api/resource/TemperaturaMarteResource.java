@@ -75,7 +75,7 @@ public class TemperaturaMarteResource {
 			
 			
 			if(jsonObject.isNull(SOL)) {
-				return new ResponseEntity <String>("{\"erro\":\"SOL não enocontrado\"}",HttpStatus.INTERNAL_SERVER_ERROR);
+				return new ResponseEntity <String>("{\"erro\":\"SOL not found\"}",HttpStatus.INTERNAL_SERVER_ERROR);
 			} else {
 				JSO jso = new JsonUtil<JSO>() .converterStringParaObjeto(jsonObject.get(SOL).toString(), JSO.class) ;
 				
