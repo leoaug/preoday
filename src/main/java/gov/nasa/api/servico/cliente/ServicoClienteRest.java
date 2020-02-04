@@ -501,7 +501,7 @@ public class ServicoClienteRest {
 			} else if (response.getStatusLine().getStatusCode() == 404) {
 				throw new HttpResponseException(response.getStatusLine().getStatusCode(),"página ou (enpoint) : " + url +" , não encontrado");
 			} else {
-				return "erro Causa: " + response.getEntity();
+				return new JSONObject("{\"erro Causa:\": " + response.getEntity().toString() + "}").toString() ;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

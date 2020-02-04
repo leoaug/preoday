@@ -81,7 +81,6 @@ public class WebXml implements  WebApplicationInitializer,  WebMvcConfigurer {
 	
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {		
-		//registry.jsp("/webapp/", ".xhtml");
 	}
 	
 	
@@ -97,16 +96,12 @@ public class WebXml implements  WebApplicationInitializer,  WebMvcConfigurer {
 
 
 	@Override
-	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-		// TODO Auto-generated method stub
-		
+	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {		
 	}
 
 
 	@Override
-	public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
-		// TODO Auto-generated method stub
-		
+	public void configureAsyncSupport(AsyncSupportConfigurer configurer) {		
 	}
 
 
@@ -136,50 +131,38 @@ public class WebXml implements  WebApplicationInitializer,  WebMvcConfigurer {
 
 
 	@Override
-	public void addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers) {
-		// TODO Auto-generated method stub
-		
+	public void addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers) {		
 	}
 
 
 	@Override
-	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-		// TODO Auto-generated method stub
-		
+	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {		
 	}
 
 
 	@Override
-	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-		// TODO Auto-generated method stub
-		
+	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {		
 	}
 
 
 	@Override
-	public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
-		// TODO Auto-generated method stub
-		
+	public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {		
 	}
 
 
 	@Override
-	public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
-		// TODO Auto-generated method stub
-		
+	public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {		
 	}
 
 
 	@Override
 	public Validator getValidator() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 	@Override
 	public MessageCodesResolver getMessageCodesResolver() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

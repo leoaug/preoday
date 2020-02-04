@@ -3,7 +3,10 @@ package gov.br.nasa.api.client;
 
 
 import org.junit.Test;
+
+import gov.nasa.api.bean.Temperature;
 import gov.nasa.api.servico.cliente.ServicoClienteRest;
+import gov.nasa.api.util.JsonUtil;
 
 public class TemperaturaMarteClient {
 
@@ -22,13 +25,13 @@ public class TemperaturaMarteClient {
 			 * */
 			//String url = "http://localhost:8080/preoday/nasa/temperature";
 			
-			String resultado = ServicoClienteRest.GET(url, 
-								   true,
-								   null,
-								   null,
-								   5000);
+			Temperature temperature = new JsonUtil<Temperature>().converterStringParaObjeto(ServicoClienteRest.GET(url, 
+					   true,
+					   null,
+					   null,
+					   5000), Temperature.class) ;
 			
-			System.out.println(resultado);
+			System.out.println("Average = " +temperature.getAverageTemperature());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
