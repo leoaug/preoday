@@ -16,24 +16,32 @@ public class TemperaturaMarteClient {
 		try {
 			
 			/**
-			 ** Enpoint para quadno quiser o SOL
+			 ** Enpoint when SOL exists
 			 * */
-			String url = "http://localhost:8080/preoday/nasa/temperature/416";
+			//String url = "http://localhost:8080/preoday/nasa/temperature/416";
 			
 			/**
-			 ** Enpoint para quando quiser ql SOL
+			 ** Enpoint when SOL dont exists
 			 * */
-			//String url = "http://localhost:8080/preoday/nasa/temperature";
+			//String url = "http://localhost:8080/preoday/nasa/temperature/41645656";
 			
-			Temperature temperature = new JsonUtil<Temperature>().converterStringParaObjeto(ServicoClienteRest.GET(url, 
-					   true,
-					   null,
-					   null,
-					   5000), Temperature.class) ;
+			/**
+			 ** Enpoint for all sol_keys in week
+			 * */
+			String url = "http://localhost:8080/preoday/nasa/temperature";
 			
-			System.out.println("Average = " +temperature.getAverageTemperature());
+			String resposta = ServicoClienteRest.GET(url, true, null, null,
+					   5000);
+			if(resposta.contains("erro Causa:")) {
+				System.out.println("SOL inexistente, informe outro, causa: " + resposta);
+			} else {
+				Temperature temperature = new JsonUtil<Temperature>().converterStringParaObjeto(resposta, Temperature.class) ;
+				
+				System.out.println("Average = " +temperature.getAverageTemperature());
+			}
+			
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}	
 	}
 	
